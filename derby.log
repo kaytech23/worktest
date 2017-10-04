@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Sun Oct 01 15:59:52 CEST 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015e-d83c-6b7f-0000065f5428 
-on database directory E:\MyDB\demo with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
-Loaded from file:/C:/Users/Kay-Ext/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+Tue Oct 03 17:12:42 CEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015e-e2cb-d1d5-000005890b30 
+on database directory C:\MyDB\demo with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/C:/Users/plkasiu/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_74-b02
-user.dir=C:\Users\Kay-Ext\IdeaProjects\hibernatetest
+java.runtime.version=1.8.0_144-b01
+user.dir=C:\Users\plkasiu\IdeaProjects\worktest
 os.name=Windows 7
 os.arch=amd64
 os.version=6.1

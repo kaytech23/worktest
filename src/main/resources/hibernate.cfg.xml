@@ -8,7 +8,7 @@
         <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
         <!--<property name="hibernate.connection.username">user</property>-->
         <!--<property name="hibernate.connection.password">pass</property>-->
-        <property name="hibernate.connection.url">jdbc:derby:e:\MyDB\demo;create=true</property>
+        <property name="hibernate.connection.url">jdbc:derby:c:\MyDB\demo;create=true</property>
 
         <!-- Enable Hibernate's automatic session context management -->
         <property name="current_session_context_class">thread</property>

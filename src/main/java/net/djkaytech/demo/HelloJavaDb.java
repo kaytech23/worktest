@@ -23,7 +23,7 @@ public class HelloJavaDb {
 
     private static void testConnectionWithDataSource() throws SQLException {
         HelloJavaDb app = new HelloJavaDb();
-        DataSource dataSource = app.getEmbeddedDS("e:\\MyDB\\demo");
+        DataSource dataSource = app.getEmbeddedDS("c:\\MyDB\\demo");
         Connection connection = dataSource.getConnection();
         app.normalDbUsage(connection);
 
@@ -34,7 +34,7 @@ public class HelloJavaDb {
         // URL format is
         // jdbc:derby:<local directory to save data>
         // -------------------------------------------
-        String dbUrl = "jdbc:derby:e:\\MyDB\\demo;create=true";
+        String dbUrl = "jdbc:derby:c:\\MyDB\\demo;create=true";
         //conn = DriverManager.getConnection(dbUrl);
     }
 
