@@ -4,10 +4,7 @@ import org.apache.derby.jdbc.ClientDataSource;
 import org.apache.derby.jdbc.EmbeddedDataSource;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class HelloJavaDb {
     //Connection conn;
@@ -17,15 +14,18 @@ public class HelloJavaDb {
 
         //app.connectionToDerby();
         //app.normalDbUsage();
+
         testConnectionWithDataSource();
 
     }
 
     private static void testConnectionWithDataSource() throws SQLException {
         HelloJavaDb app = new HelloJavaDb();
-        DataSource dataSource = app.getEmbeddedDS("e:\\MyDB\\demo");
+        DataSource dataSource = app.getEmbeddedDS("c:\\MyDB\\demo");
         Connection connection = dataSource.getConnection();
-        app.normalDbUsage(connection);
+        //app.printDbMetaData(connection);
+        app.printDbTableData(connection);
+        //app.normalDbUsage(connection);
 
     }
 
@@ -34,8 +34,46 @@ public class HelloJavaDb {
         // URL format is
         // jdbc:derby:<local directory to save data>
         // -------------------------------------------
-        String dbUrl = "jdbc:derby:e:\\MyDB\\demo;create=true";
+        String dbUrl = "jdbc:derby:c:\\MyDB\\demo;create=true";
         //conn = DriverManager.getConnection(dbUrl);
+    }
+
+    private void printDbMetaData(Connection connection) throws SQLException {
+        DatabaseMetaData databaseMetaData = connection.getMetaData();
+        String   catalog          = null;
+        String   schemaPattern    = null;
+        String   tableNamePattern = null;
+        String[] types            = null;
+
+        ResultSet result = databaseMetaData.getTables(
+                catalog, schemaPattern, tableNamePattern, types );
+
+        while(result.next()) {
+            String tableName = result.getString(3);
+            System.out.println(tableName);
+        }
+
+    }
+
+    private void printDbTableData(Connection connection) throws SQLException {
+
+        String   catalog           = null;
+        String   schemaPattern     = null;
+        String   tableNamePattern  = "CARREGISTER_CAR";
+        String   columnNamePattern = null;
+
+        DatabaseMetaData databaseMetaData = connection.getMetaData();
+        ResultSet result = databaseMetaData.getColumns(
+                catalog, schemaPattern,  tableNamePattern, columnNamePattern);
+
+        while(result.next()){
+            String columnName = result.getString(4);
+            int    columnType = result.getInt(5);
+
+            System.out.println(columnName);
+            System.out.println(columnType);
+
+        }
     }
 
     public void normalDbUsage(Connection conn) throws SQLException {
@@ -53,7 +91,7 @@ public class HelloJavaDb {
         //stmt.executeUpdate("insert into users values (3,'wladimir')");
 
         // query
-        ResultSet rs = stmt.executeQuery("SELECT * FROM users");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM people");
 
         // print out query result
         while (rs.next()) {
