@@ -13,7 +13,7 @@ public class CarRegister {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.LAZY)
     private List<Car> cars = new ArrayList<>();
 
     public void addCar(Car car) {
@@ -34,5 +34,9 @@ public class CarRegister {
                 "id=" + id +
                 ", cars=" + cars +
                 '}';
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }
