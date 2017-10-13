@@ -59,7 +59,7 @@ public class HelloJavaDb {
 
         String   catalog           = null;
         String   schemaPattern     = null;
-        String   tableNamePattern  = "CARREGISTER_CAR";
+        String   tableNamePattern  = "JOINTABLE";
         String   columnNamePattern = null;
 
         DatabaseMetaData databaseMetaData = connection.getMetaData();
