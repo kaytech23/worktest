@@ -3,7 +3,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="net.djkaytech.demo.Car" table="CARS" catalog="app">
+    <class name="net.djkaytech.demo.hibernate.Car" table="CARS" catalog="app">
         <id name="Id" type="java.lang.Long">
             <column name="Id" />
             <generator class="identity" />

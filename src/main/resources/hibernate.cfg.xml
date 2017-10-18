@@ -19,11 +19,11 @@
         <!--<property name="format_sql">true</property>-->
         <!--<property name="use_sql_comments">true</property>-->
         <!--<mapping resource="com/zetcode/hibernate/Car.hbm.xml"></mapping>-->
-        <mapping class="net.djkaytech.demo.embedable.EmbId"/>
-        <mapping class="net.djkaytech.demo.embedable.EmbTest"/>
-        <mapping class="net.djkaytech.demo.User"/>
-        <mapping class="net.djkaytech.demo.embedable.Person"/>
-        <mapping class="net.djkaytech.demo.embedable.PhoneNumber"/>
+        <mapping class="net.djkaytech.demo.hibernate.embedable.EmbId"/>
+        <mapping class="net.djkaytech.demo.hibernate.embedable.EmbTest"/>
+        <mapping class="net.djkaytech.demo.hibernate.User"/>
+        <mapping class="net.djkaytech.demo.hibernate.embedable.Person"/>
+        <mapping class="net.djkaytech.demo.hibernate.embedable.PhoneNumber"/>
         <mapping resource="Car.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
